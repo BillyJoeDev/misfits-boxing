@@ -1,0 +1,100 @@
+.hero-wrapper {
+    position: relative;
+    height: clamp(568px, 90vh, 800px);
+    width: 100%;
+}
+
+.hero-img {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background: url('/public/images/ksi-swarmz-banner.jpg') top center no-repeat;
+    background-size: cover;
+    filter: brightness(0.1);
+    z-index: 2;
+}
+
+.hero-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+    height: 100%;
+    gap: 60px;
+}
+
+.hero-brand-logo {
+    z-index: inherit;
+    width: clamp(200px, 65vw, 350px);
+    animation: brand-logo-flip 5s alternate infinite both;
+}
+
+.hero-buttons {
+    z-index: inherit;
+    display: flex;
+    gap: 10px;
+}
+
+.hero-primary-button, .hero-secondary-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    cursor: pointer;
+    color: #fff;
+    padding: 10px 20px;
+    background-color: transparent;
+    border: none;
+    font-size: clamp(14px, 1vw, 16px);
+    font-weight: 900;
+    border-radius: 20px;
+    text-decoration: none;
+    transition: 0.3s all ease-in-out;
+}
+
+.hero-secondary-button {
+    border: 1px solid white;
+}
+
+.hero-secondary-button:hover {
+    background-color: white;
+    color: black;
+}
+
+.hero-primary-button {
+    background-color: #04abb1;
+}
+
+.hero-primary-button:hover {
+    background-color: #007d81;
+}
+
+@keyframes brand-logo-flip {
+    0% {
+        -webkit-transform: rotateZ(0);
+        transform: rotateZ(0);
+    }
+    33% {
+        -webkit-transform: rotateZ(-90deg);
+        transform: rotateZ(-90deg);
+    }
+    50% {
+        -webkit-transform: rotateZ(-180deg);
+        transform: rotateZ(-180deg);
+    }
+    75% {
+        -webkit-transform: rotateZ(-360deg);
+        transform: rotateZ(-360deg);
+    }
+    100% {
+        -webkit-transform: rotateZ(0);
+        transform: rotateZ(0);
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .hero-buttons {
+        flex-direction: column;
+    }
+}
