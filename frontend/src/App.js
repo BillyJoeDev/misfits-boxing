@@ -11,9 +11,10 @@ function App() {
   const [voteCounts, setVoteCounts] = useState([]);
   const [fights,setFights] = useState([]);
 
+  const BASE_URL = "http://localhost:5000";
   const getFights = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/getfights");
+      const res = await axios.get(`${BASE_URL}/getfights`);
       setFights(res.data?.fights);
     } catch (err) {
       console.log(err);
@@ -30,7 +31,7 @@ function App() {
     setIP(ipaddress);
 
     try {
-      const res = await axios.get("http://localhost:5000/getvotes", {
+      const res = await axios.get(`${BASE_URL}/getvotes`, {
         headers: {ipaddress}
       });
       
@@ -45,7 +46,7 @@ function App() {
 
   const placeVote = async (vote) => {
     try {
-      const res = await axios.post("http://localhost:5000/submitvote",
+      const res = await axios.post(`${BASE_URL}/submitvote`,
       JSON.stringify({ip, vote}), 
       {
         headers: { 'Content-Type': 'application/json' }
