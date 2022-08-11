@@ -3,10 +3,12 @@
   "version": "1.0.0",
   "description": "Backend for Misfits Boxing Site",
   "main": "index.js",
+  "engines": {
+    "node": "16.14.0"
+  },
   "scripts": {
     "start": "node index.js",
-    "devstart": "nodemon index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "devstart": "nodemon index.js"
   },
   "author": "Travis Price",
   "license": "ISC",
