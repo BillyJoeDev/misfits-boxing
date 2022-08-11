@@ -113,7 +113,7 @@ function App() {
                           var voteCount = voteCountFilter.length > 0 ? voteCountFilter[0]?.votecount : 0;
 
                           row.push(
-                            <button className={classname} key={"fight_" + index} name={fighter.name} record={fighter.record} votecount={voteCount} onClick={() => placeVote(fighter.name)}>
+                            <button className={classname} key={"fight_" + index} name={fighter.name} record={fighter.record} votecount={voteCount} onClick={(classname.includes("-voted") || classname.includes("-disabled")) ? null : () => placeVote(fighter.name)}>
                               <img className={(classname.includes('voted') || classname.includes('disabled')) ? 'fighter-image-nohover' : 'fighter-image'} src={fighter.image} alt={'Picture of ' + fighter.name} style={{left: fighter.position.left}}/>
                             </button>
                           );
