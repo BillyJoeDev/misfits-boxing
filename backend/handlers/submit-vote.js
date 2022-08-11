@@ -8,7 +8,7 @@ module.exports = async (req, res) => {
         var votes = [];
         console.log(ip + " just pushed vote for " + vote);
         console.log(votes.length);
-        const possibleUser = await User.findOne({ ip });
+        const possibleUser = await User.findOne({ ipaddress: ip });
         if (!possibleUser) {
             votes.push(vote);
             const user = await User.create({
