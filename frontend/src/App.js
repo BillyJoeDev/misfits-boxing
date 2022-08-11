@@ -28,6 +28,7 @@ function App() {
       return;
     }
 
+    alert("Your IP: " + ipaddress);
     setIP(ipaddress);
 
     try {
