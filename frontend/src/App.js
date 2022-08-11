@@ -11,7 +11,7 @@ function App() {
   const [voteCounts, setVoteCounts] = useState([]);
   const [fights,setFights] = useState([]);
 
-  const BASE_URL = "https://misfitsboxingapi.vercel.app";
+  const BASE_URL = "https://misfitsboxing.herokuapp.com";
   const getFights = async () => {
     try {
       const res = await axios.get(`${BASE_URL}/getfights`);
