@@ -4,7 +4,8 @@
   "description": "Backend for Misfits Boxing Site",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon index.js",
+    "start": "node index.js",
+    "devstart": "nodemon index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Travis Price",
