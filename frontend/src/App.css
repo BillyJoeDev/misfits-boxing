@@ -23,6 +23,7 @@
   right: 0;
   bottom: 0;
   background: url(../public/images/Grey-x-background.jpg) center center no-repeat;
+  background-size: cover;
   filter: brightness(0.2) blur(8px);
   transform: scale(1.1);
   z-index: 1;
