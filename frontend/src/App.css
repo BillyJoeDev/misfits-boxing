@@ -11,9 +11,27 @@
   padding: 0;
 }
 
+html {
+  background-color: #161616;
+}
+
 .fight-card-wrapper {
   position: relative;
   overflow: hidden;
+}
+
+.loading-fights-text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-shadow: 1px 1px 5px rgb(17, 17, 17);
+  padding: 30px 0 15px 0;
+}
+
+
+.fa-moon {
+  margin-right: 15px;
 }
 
 .fight-card-background {
@@ -51,7 +69,7 @@ footer {
   justify-content: center;
   width: 100%;
   background-color: #1f1f1f;
-  margin-top: 40px;
+  margin-top: 20px;
   z-index: 5;
 }
 

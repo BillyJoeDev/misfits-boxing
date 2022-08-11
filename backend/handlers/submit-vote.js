@@ -6,8 +6,6 @@ module.exports = async (req, res) => {
 
     try {
         var votes = [];
-        console.log(ip + " just pushed vote for " + vote);
-        console.log(votes.length);
         const possibleUser = await User.findOne({ ipaddress: ip });
         if (!possibleUser) {
             votes.push(vote);
@@ -15,12 +13,9 @@ module.exports = async (req, res) => {
                 ipaddress: ip, 
                 votes
             });
-            console.log(votes.length);
 
             if (!user) return res.status(500).send("Could not create user.");
-            console.log("Created User: " + ip);
         } else {
-            console.log(ip + " just updated a vote");
             votes = possibleUser.UpdateVotes(vote);
         }
 
