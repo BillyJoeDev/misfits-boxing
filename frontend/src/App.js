@@ -11,7 +11,7 @@ function App() {
   const [voteCounts, setVoteCounts] = useState([]);
   const [fights,setFights] = useState([]);
 
-  const BASE_URL = "http://localhost:5000";
+  const BASE_URL = "https://misfitsboxingapi.vercel.app";
   const getFights = async () => {
     try {
       const res = await axios.get(`${BASE_URL}/getfights`);
@@ -37,8 +37,6 @@ function App() {
       
       setVotes(res.data?.votes);
       setVoteCounts(res.data?.voteCounts);
-
-      console.log(res.data?.voteCounts);
     } catch (err) {
       console.log(err);
     }
@@ -63,9 +61,7 @@ function App() {
         updatedVoteCount.push(fighter);
       });
 
-      console.log("Updated Fighter " + res.data.updatedFighter);
       updatedVoteCount.push(res.data?.updatedFighter);
-      console.log("Updated Vote Count " + updatedVoteCount);
       setVoteCounts(updatedVoteCount);
     } catch (err) {
       console.log(err);
